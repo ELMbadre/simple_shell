@@ -15,7 +15,7 @@
 
 char *readRow(void);
 char **textSegmenter(char *line);
-int carryOut(char **comd,char **argv);
+int carryOut(char **comd, char **argv);
 extern char **environ;
 
 void freearv(char **aray);
