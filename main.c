@@ -11,7 +11,7 @@ int	main(int ac, char **av)
 {
 	char *ln = NULL;
 	char **cmd = NULL;
-	int stateInfo = 0;
+	int stateInfo = 0, idx = 0;
 	(void)ac;
 	(void)av;
 
@@ -24,13 +24,13 @@ int	main(int ac, char **av)
 				write(STDOUT_FILENO, "\n", 1);
 			return (stateInfo);
 		}
-		/*  idx++;*/
+		idx++;
 		cmd = textSegmenter(ln);
 		if (!cmd)
 			continue;
 		/*if (is_builtin(cmd[0]))*/
 		 /* handle_builtin(cmd, av, &stateInfo, idx);*/
 		/*else*/
-		stateInfo = carryOut(cmd, av);
+		stateInfo = carryout(cmd, av, idx);
 	}
 }
