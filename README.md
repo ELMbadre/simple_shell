@@ -45,7 +45,8 @@ Write a blog post detailing the step-by-step process when typing `ls -l *.c` in 
 To compile the shell, use the following command:
 
 ```bash
-gcc -Wall -Werror -Wextra -pedantic *.c -o simple_shell
+gcc -Wall -Werror -Wextra -pedantic *.c -o simple_shell.
+```
 
 ## Authors
 
