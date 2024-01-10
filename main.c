@@ -28,9 +28,9 @@ int	main(int ac, char **av)
 		cmd = textSegmenter(ln);
 		if (!cmd)
 			continue;
-		/*if (is_builtin(cmd[0]))*/
-		 /* handle_builtin(cmd, av, &stateInfo, idx);*/
-		/*else*/
-		stateInfo = carryout(cmd, av, idx);
+		if (check_builtin(cmd[0]))
+			executebuiltin(cmd, av, &stateInfo, idx);
+		else
+			stateInfo = carryout(cmd, av, idx);
 	}
 }
