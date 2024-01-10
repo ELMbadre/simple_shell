@@ -1,15 +1,21 @@
 #include "shell.h"
 
 /**
- * carryOut - Execute a command and wait for its completion.
- * @comd: An array of strings representing the command and its arguments.
- * @argv: An array of strings representing theprogram's command-linearguments.
+ * carryout - Execute a command and handle the associated processes.
+ * @comd: An array containing the command and its arguments.
+ * @argv: An array containing the program name and its arguments.
+ * @idx: The index representing the command's position in input sequence.
  *
- * This function forks a child process, executes the specified command using
- * execve, and waits for the child process to complete. It returns the exit
- * status of the child process.
+ * This function executes a command specified by the 'comd' parameter.
+ * It looks for the full path of the command using the 'fetchpath' function,
+ * forks a child process to execute the command, and waits for the child's
+ * completion. The function also handles errors and prints relevant messages.
  *
- * Return: The exit status of the child process.
+ * @comd: An array containing the command and its arguments.
+ * @argv: An array containing the program name and its arguments.
+ * @idx: The index representing the command's position in input sequence.
+ *
+ * Return: The exit status of the executed command.
  */
 int	carryout(char **comd, char **argv, int idx)
 {
