@@ -15,10 +15,15 @@
 
 char *readRow(void);
 char **textSegmenter(char *line);
-int carryOut(char **comd, char **argv);
+int carryout(char **comd, char **argv, int idx);
 extern char **environ;
-
+char *accessenv(char *var);
+char *fetchpath(char *comma);
 void freearv(char **aray);
+
+void printerror(char *name, char *cmd, int idx);
+char *_itoa(int n);
+void reverse_string(char *str, int len);
 
 char *_strdup(const char *str);
 int _strcmp(char *s1, char *s2);
