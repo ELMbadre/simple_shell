@@ -21,8 +21,16 @@ char *accessenv(char *var);
 char *fetchpath(char *comma);
 void freearv(char **aray);
 
-void printerror(char *name, char *cmd, int idx);
 char *_itoa(int n);
+void reverse_string(char *str, int len);
+void displayenv(char **cmd, int *stateInfo);
+void closeShell(char **cmd, char **arv, int *stateInfo, int idx);
+void executebuiltin(char **cmd, char **arv, int *stateInfo, int idx);
+int check_builtin(char *cmd);
+int cast_atoi(char *str);
+int isNonNegative(char *str);
+
+void printerror(char *name, char *cmd, int idx);
 void reverse_string(char *str, int len);
 
 char *_strdup(const char *str);
